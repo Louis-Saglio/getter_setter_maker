@@ -1,8 +1,7 @@
-def create_class(verbose=False, nom_classe=None, input_attributs=None, path="Auto", tab='    '):
+def create_class(verbose=False, nom_classe=None, input_attributs=None, tab='    '):
     if verbose:
         nom_classe = input("Entrez le nom de la classe: ")
         input_attributs = input("Entrez le nom des attributs séparés par des virgules:  ")
-        tab = '    '
 
     input_attributs += ','
     attributs = []
@@ -14,10 +13,7 @@ def create_class(verbose=False, nom_classe=None, input_attributs=None, path="Aut
             attributs.append(attr)
             attr = ''
 
-    if path == "Auto":
-        fichier = "classes/" + nom_classe.lower() + '.py'
-
-    with open(fichier, 'a') as dest:
+    with open("classes.py", 'a') as dest:
         print("class ", nom_classe, ':\n', sep='', file=dest)
         print(tab, "def __init__(self, attributs):", sep='', file=dest)
         print(tab, tab, "self.attr = attributs", sep='', file=dest)
@@ -28,6 +24,7 @@ def create_class(verbose=False, nom_classe=None, input_attributs=None, path="Aut
             print(tab, "# Gestion de ", attribut, sep='', file=dest)
             print(tab, "def get_", attribut, "(self):\n", tab, tab, "return self.", attribut, sep='', end='\n\n', file=dest)
             print(tab, "def set_", attribut, "(self, new_", attribut, "):\n", tab, tab, "self.", attribut, " = new_", attribut, sep='', end='\n\n', file=dest)
+        print("\n\n\n", sep='', end="\n", file=dest)
 
 
 def create_object(classe, attributs):
@@ -46,10 +43,14 @@ def create_object(classe, attributs):
     return objets
 
 
+def create_class_instance(nom_classe, attributs):
+        pass
+
+
 if __name__ == "__main__":
     create_class(nom_classe="Pion", input_attributs="nom,position")
-    from classes.pion import Pion
-    from os import remove
+    from classes import Pion
     objets = create_object(Pion, {"nom": ["pion1", "pion2"], "position": [1, 2]})
     print(objets[1].get_nom(), objets[0].get_position())
-    remove("classes/pion.py")
+    # from os import remove
+    # remove("classes/pion.py")
