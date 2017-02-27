@@ -29,7 +29,7 @@ def create_class(verbose=False, nom_classe=None, input_attributs=None, tab='    
 
 def create_object(classe, attributs):
     """
-        classe : str
+        classe : Type
         attributs : {str: [], ...}
     """
 
@@ -66,11 +66,11 @@ def create_class_instance(nom_classe, attributs):
 
     # On vérifie si la classe existe déja. Sinon on la créé. En tout cas on l'importe
     try:
-        exec("try:\n\tfrom classes import " + nom_classe)
+        exec("from classes import " + nom_classe)
     except:
-        # liste
         from os import system
         system("python class_creator.py " + nom_classe + ' ' + liste_attributs)
+        # system("pause")
         exec("from classes import " + nom_classe)
 
     # On créé la liste d'objets demandée
@@ -79,13 +79,10 @@ def create_class_instance(nom_classe, attributs):
 
 
 if __name__ == "__main__":
-    # create_class(nom_classe="Pion", input_attributs="nom,position")
-    # from classes import Pion
-    # objets = create_object("Test", {"nn": ["pion1", "pion2"], "gg": [1, 2]})
-    # print(objets[1].get_nn(), objets[0].get_gg())
-    # # from os import remove
-    # # remove("classes/pion.py")
-    o = create_class_instance("Test", {"nom": ["pion1", "pion2"], "position": [1, 2]})
+    o = create_class_instance("Test2", {"nom": ["pion1", "pion2"], "position": [1, 2]})
     print(o[0].get_nom(), o[1].get_position())
-    # create_class(True)
-    # create_class(nom_classe="Test", input_attributs=["nom", "prenom"])
+    from os import remove
+    try:
+        remove("classes.py")
+    except:
+        pass

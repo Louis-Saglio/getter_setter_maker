@@ -3,6 +3,7 @@ from sys import argv
 nom_classe = argv[1]
 tab = '    '
 input_attributs = argv[2]
+
 if input_attributs[len(input_attributs)-1] != ',':
     input_attributs += ','
 
@@ -27,4 +28,4 @@ with open("classes.py", 'a') as dest:
         print(tab, "def get_", attribut, "(self):\n", tab, tab, "return self.", attribut, sep='', end='\n\n', file=dest)
         print(tab, "def set_", attribut, "(self, new_", attribut, "):\n", tab, tab, "self.", attribut, " = new_",
               attribut, sep='', end='\n\n', file=dest)
-    print("\n\n\n", sep='', end="\n", file=dest)
+    print("\n", sep='', end='', file=dest)
