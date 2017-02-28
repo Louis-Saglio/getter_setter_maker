@@ -9,7 +9,7 @@
         <li>Importer au minimum la fonction create_class_instance() du fichier getter_setter_maker.py dans le script devant l'utiliser</li>
     </ul>
 </p>
-<p>Fonctionnement de la fonction : create_class_instance()</p>
+### Fonctionnement de la fonction : create_class_instance()
 <ul>
     <li>
         Utilité : Créer automatiquement une class avec ses méthodes de base (__init__, getter, setter) et une liste d'instance(s) de cette class suivant les paramètres choisis par l'utilisateur
@@ -27,7 +27,7 @@
         </ul>
     </li>
 </ul>
-<p>Fonctionnement de l'outil class_creator.py</p>
+### Fonctionnement de l'outil class_creator.py
 <ul>
     <li>Utilité : Cet outil permet d'écrire automatiquement une classe compatible avec la fonction create_class_instance() avec sa fonction __init et ses accesseurs et mutateurs.</li>
     <li>Pour l'utiliser procédez comme il suit :
