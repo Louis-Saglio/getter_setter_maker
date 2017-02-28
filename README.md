@@ -1,5 +1,7 @@
 # getter_setter_maker
+## Description :
 <p>Script Python automatisant la création d'une classe Python ainsi que des instances de cette classe</p>
+## Usage
 <p>
     <p>Pour l'utiliser, il faut :</p>
     <ul>
@@ -25,3 +27,12 @@
         </ul>
     </li>
 </ul>
+## Problèmes connus :
+<p>
+<h3>Impossible d'importer une classe</h3>
+<ul>
+    <li>Message d'erreur : ImportError: cannot import name 'Nom_class'</li>
+    <li>Cause : Cette erreur est du à un problème de cache mémoire.</li>
+    <li>Solutions : Supprimer le fichier __pycache__ dans le dossier du programme; si le problème persiste redémarrer l'ordinateur.</li>
+</ul>
+</p>
