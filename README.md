@@ -1,5 +1,5 @@
 # getter_setter_maker
-<p>Script Python automatisant la création d'une classe Python</p>
+<p>Script Python automatisant la création d'une classe Python ainsi que des instances de cette classe</p>
 <p>
     <p>Pour l'utiliser, il faut :</p>
     <ul>
