@@ -27,6 +27,17 @@
         </ul>
     </li>
 </ul>
+<p>Fonctionnement de l'outil class_creator.py</p>
+<ul>
+    <li>Utilité : Cet outil permet d'écrire automatiquement une classe compatible avec la fonction create_class_instance() avec sa fonction __init et ses accesseurs et mutateurs.</li>
+    <li>Pour l'utiliser procédez comme il suit :
+        <ul>
+            <li>Placez le fichier class_creator.py là où vous voulez créer le fichier contenant votre classe</li>
+            <li>Ouvrez y un invite de commande</li>
+            <li>Lancez la commande suivante : C:\folder> python class_creator.py nom_de_votre_classe attribut1,attribut2,attribut3...</li>
+        </ul>
+    </li>
+</ul>
 ## Problèmes connus :
 <p>
 <h3>Impossible d'importer une classe</h3>
