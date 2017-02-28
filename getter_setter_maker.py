@@ -22,8 +22,10 @@ def create_class(verbose=False, nom_classe=None, input_attributs=None, tab='    
         print("\n", end='', file=dest)
         for attribut in attributs:
             print(tab, "# Gestion de ", attribut, sep='', file=dest)
-            print(tab, "def get_", attribut, "(self):\n", tab, tab, "return self.", attribut, sep='', end='\n\n', file=dest)
-            print(tab, "def set_", attribut, "(self, new_", attribut, "):\n", tab, tab, "self.", attribut, " = new_", attribut, sep='', end='\n\n', file=dest)
+            print(tab, "def get_", attribut, "(self):\n", tab, tab, "return self.", attribut, sep='', end='\n\n',
+                  file=dest)
+            print(tab, "def set_", attribut, "(self, new_", attribut, "):\n", tab, tab, "self.", attribut, " = new_",
+                  attribut, sep='', end='\n\n', file=dest)
         print("\n\n\n", sep='', end="\n", file=dest)
 
 
@@ -67,10 +69,9 @@ def create_class_instance(nom_classe, attributs):
     # On vérifie si la classe existe déja. Sinon on la créé. En tout cas on l'importe
     try:
         exec("from classes import " + nom_classe)
-    except:
+    except ImportError:
         from os import system
         system("python class_creator.py " + nom_classe + ' ' + liste_attributs)
-        # system("pause")
         exec("from classes import " + nom_classe)
 
     # On créé la liste d'objets demandée
@@ -84,5 +85,5 @@ if __name__ == "__main__":
     from os import remove
     try:
         remove("classes.py")
-    except:
+    except NameError:
         pass
