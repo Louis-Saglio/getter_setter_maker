@@ -3,6 +3,7 @@
 <p>
     <p>Pour l'utiliser, il faut :</p>
     <ul>
+        <li>Avoir installé Python 3.2 ou supèrieur</li>
         <li>Avoir les fichiers class_creator.py et getter_setter_maker.py dans le dossier courant</li>
         <li>Importer au minimum la fonction create_class_instance() du fichier getter_setter_maker.py dans le script devant l'utiliser</li>
     </ul>
@@ -25,3 +26,11 @@
         </ul>
     </li>
 </ul>
+<p>Fonctionnement de l'outil class_creator.py</p>
+Cet outil permet d'écrire automatiquement une classe compatible avec la fonction create_class_instance() avec sa fonction __init et ses accesseurs et mutateurs.
+Pour l'utiliser procédez comme il suit :
+<ul>
+<li>Placez le fichier class_creator.py là où vous voulez créer le fichier contenant votre classe</li>
+<li>Ouvrez y un invite de commande</li>
+<li>Lancez la commande suivante : C:\folder> python class_creator.py nom_de_votre_classe attribut1,attribut2,attribut3...</li>
+<ul>
