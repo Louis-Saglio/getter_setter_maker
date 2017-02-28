@@ -1,9 +1,10 @@
 # getter_setter_maker
-<p>Script Python automatisant la création d'une classe Python</p>
+## Description :
+<p>Script Python automatisant la création d'une classe Python ainsi que des instances de cette classe</p>
+## Usage
 <p>
     <p>Pour l'utiliser, il faut :</p>
     <ul>
-        <li>Avoir installé Python 3.2 ou supèrieur</li>
         <li>Avoir les fichiers class_creator.py et getter_setter_maker.py dans le dossier courant</li>
         <li>Importer au minimum la fonction create_class_instance() du fichier getter_setter_maker.py dans le script devant l'utiliser</li>
     </ul>
@@ -26,11 +27,12 @@
         </ul>
     </li>
 </ul>
-<p>Fonctionnement de l'outil class_creator.py</p>
-Cet outil permet d'écrire automatiquement une classe compatible avec la fonction create_class_instance() avec sa fonction __init et ses accesseurs et mutateurs.
-Pour l'utiliser procédez comme il suit :
+## Problèmes connus :
+<p>
+<h3>Impossible d'importer une classe</h3>
 <ul>
-<li>Placez le fichier class_creator.py là où vous voulez créer le fichier contenant votre classe</li>
-<li>Ouvrez y un invite de commande</li>
-<li>Lancez la commande suivante : C:\folder> python class_creator.py nom_de_votre_classe attribut1,attribut2,attribut3...</li>
-<ul>
+    <li>Message d'erreur : ImportError: cannot import name 'Nom_class'</li>
+    <li>Cause : Cette erreur est du à un problème de cache mémoire.</li>
+    <li>Solutions : Supprimer le fichier __pycache__ dans le dossier du programme; si le problème persiste redémarrer l'ordinateur.</li>
+</ul>
+</p>
