@@ -1,3 +1,6 @@
+from write_in_file import insert_line_into_file, iter_file
+
+
 def create_class(verbose=False, nom_classe=None, input_attributs=None, tab='    '):
     if verbose:
         nom_classe = input("Entrez le nom de la classe: ")
@@ -77,11 +80,26 @@ def create_class_instance(nom_classe, attributs):
     return objets
 
 
+def add_attribute_to_class(nom_classe, nom_attribut, tab="    "):
+
+    def find_right_line(class_name):
+        for line in iter_file("classes/" + class_name.lower() + ".py"):
+            if line["text"] == tab * 2 + "# Fin de la methode init\n":
+                return line["line_num"] - 2
+
+    print(find_right_line(nom_classe))
+    insert_line_into_file("classes/" + nom_classe.lower() + '.py',
+                          tab * 2 + "self.set_" + nom_attribut + "(attributs[\"" + nom_attribut + "\"])\n",
+                          find_right_line(nom_classe))
+    comment = tab + "# Gestion de " + nom_attribut + "\n"
+    getter = tab + "def get_" + nom_attribut + "(self):\n" + tab * 2 + "return self." + nom_attribut
+    setter = "\n\n" + tab + "def set_" + nom_attribut + "(self, new_" + nom_attribut + "):\n"\
+        + tab * 2 + "self." + nom_attribut + " = new_" + nom_attribut
+    with open("classes/" + nom_classe.lower() + ".py", 'a') as file:
+        file.write(comment + getter + setter)
+
+
 if __name__ == "__main__":
     o = create_class_instance("Test2", {"nom": ["pion1", "pion2"], "position": [1, 2]})
     print(o[0].get_nom(), o[1].get_position())
-    from os import remove
-    try:
-        remove("classes.py")
-    except FileNotFoundError:
-        pass
+    add_attribute_to_class("Test2", "couleur")
