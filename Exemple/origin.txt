@@ -1,0 +1,7 @@
+Ce fichier sert pour tester le module write_in_file.py
+# ligne 1
+# ligne 2
+# ligne 3
+# ligne 4
+# ligne 5
+# ligne 6
