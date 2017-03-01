@@ -42,8 +42,11 @@
                 Il doit être construit sur ce model : {"nom_attribut_1": [valeur_de_attribut_1_pour_l'instance_1, valeur_de_attribut_2_pour_l'instance_2], "nom_attribut_2": [valeur_de_attribut_2_pour_l'instance_1, valeur_de_attribut_2_pour_l'instance_2]
             </li>
         </ul>
-        <li>Retour : Une liste d'instance de la class dont les attributs sont remplis ainsi qu'ils auront été modélisé dans le paramètre attribut</li>
-    </ul></li>
+        <li>
+            Retour : Une liste d'instance de la class dont les attributs sont remplis ainsi qu'ils auront été modélisé dans le paramètre attribut
+        </li>
+    </li>
+</ul>
 ### Fonctionnement de l'outil class_creator.py
 <ul>
     <li>Utilité : Cet outil permet d'écrire automatiquement une classe compatible avec la fonction create_class_instance() avec sa fonction __init et ses accesseurs et mutateurs.</li>
