@@ -9,6 +9,25 @@
         <li>Importer au minimum la fonction create_class_instance() du fichier getter_setter_maker.py dans le script devant l'utiliser</li>
     </ul>
 </p>
+
+<p>
+    Fonctionnement de la fonction create_object() :
+</p>
+<ul>
+    <li>Utilité : Créer automatiquement une liste d'instance d'une classe précédement créé avec class_creator, en remplissant les attributs de ces instances ainsi créées avec les différentes valeurs de votre choix</li>
+    <li>
+        <p>Paramètres</p>
+        <ul>
+            <li>Le paramètre classe : C'est un objet de type class créé avec class_creator et dont vous voulez créé des instances</li>
+            <li>
+                Le paramètre 'attributs' : C'est un dictionnaire. Il correspond aux attributs de votre class et il contient également les valeurs de ces attributs pour les instances de cette class créés automatiquement.<br>
+                Il doit être construit sur ce model : {"nom_attribut_1": [valeur_de_attribut_1_pour_l'instance_1, valeur_de_attribut_2_pour_l'instance_2], "nom_attribut_2": [valeur_de_attribut_2_pour_l'instance_1, valeur_de_attribut_2_pour_l'instance_2]
+            </li>
+        </ul>
+    </li>
+    <li><li>Retour : Une liste d'instance de la class dont les attributs sont remplis ainsi qu'ils auront été modélisé dans le paramètre attribut</li>
+</ul>
+
 <p>Fonctionnement de la fonction : create_class_instance()</p>
 <ul>
     <li>
@@ -25,6 +44,7 @@
                 Il doit être construit sur ce model : {"nom_attribut_1": [valeur_de_attribut_1_pour_l'instance_1, valeur_de_attribut_2_pour_l'instance_2], "nom_attribut_2": [valeur_de_attribut_2_pour_l'instance_1, valeur_de_attribut_2_pour_l'instance_2]
             </li>
         </ul>
+        <li>Retour : Une liste d'instance de la class dont les attributs sont remplis ainsi qu'ils auront été modélisé dans le paramètre attribut</li>
     </li>
 </ul>
 <p>Fonctionnement de l'outil class_creator.py</p>
