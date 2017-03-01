@@ -50,7 +50,7 @@ def create_object(classe, attributs):
     for i in range(len(attributs[noms_attr[0]])):
         for n in noms_attr:
             dico[n] = attributs[n][i]
-        objets.append(classe(dico))
+        objets.append(classe(dico))  # Le constructeur de la classe prend un dictionnaire en paramètre
         objets = deepcopy(objets)
     return objets
 
@@ -68,11 +68,11 @@ def create_class_instance(nom_classe, attributs):
 
     # On vérifie si la classe existe déja. Sinon on la créé. En tout cas on l'importe
     try:
-        exec("from classes import " + nom_classe)
+        exec("from classes." + nom_classe.lower() + " import " + nom_classe)
     except ImportError:
         from os import system
         system("python class_creator.py " + nom_classe + ' ' + liste_attributs)
-        exec("from classes import " + nom_classe)
+        exec("from classes." + nom_classe.lower() + " import " + nom_classe)
 
     # On créé la liste d'objets demandée
     objets = eval("create_object(" + nom_classe + ", attributs)")
@@ -85,5 +85,5 @@ if __name__ == "__main__":
     from os import remove
     try:
         remove("classes.py")
-    except NameError:
+    except FileNotFoundError:
         pass

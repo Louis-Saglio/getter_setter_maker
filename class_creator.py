@@ -1,4 +1,6 @@
 from sys import argv
+from os.path import isdir
+from os import system, getcwd
 
 nom_classe = argv[1]
 tab = '    '
@@ -16,7 +18,11 @@ for lettre in input_attributs:
         attributs.append(attr)
         attr = ''
 
-with open("classes.py", 'a') as dest:
+print(getcwd())
+if not isdir("classes"):
+    system("mkdir classes")
+
+with open("classes/" + nom_classe.lower() + ".py", 'a') as dest:
     print("class ", nom_classe, ':\n', sep='', file=dest)
     print(tab, "def __init__(self, attributs):", sep='', file=dest)
     print(tab, tab, "self.attr = attributs", sep='', file=dest)
