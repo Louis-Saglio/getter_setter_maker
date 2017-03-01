@@ -36,19 +36,18 @@ def insert_line_into_file(file_name, line, where):
     :param where: Une str de la ligne après laquelle insérer, si elle n'existe pas ce sera insérer au début du fichier
     :return: None. La fonction agit directement sur le fichier et ne renvoi rien
     """
-    # Trouver où insérer
-    where_num = find_line_in_file(file_name, where)
-    # Copier jusqu'à ce point dans une variable debut
+    if isinstance(where, int):
+        where_num = where
+    else:
+        where_num = find_line_in_file(file_name, where)
     file_start = copy_piece_of_file(file_name, 1, where_num)
-    # Copier la suite dans une autre variable fin
     file_end = copy_piece_of_file(file_name, where_num + 1, find_file_last_line(file_name)["line_num"])
-    # Ecraser le fichier par debut + line + fin
     with open(file_name, 'w') as file:
         print(file_start, line, file_end, sep='', end='', file=file)
 
 
 if __name__ == "__main__":
-    a = iter_file("origin.txt")
+    a = iter_file("Exemple/origin.txt")
     for e in a:
         print(e)
     print("iter_file fonctionne")
@@ -56,4 +55,4 @@ if __name__ == "__main__":
     print("find_line_in_file() fonctionne")
     print(copy_piece_of_file("Exemple/origin.txt", 2, 5))
     print(find_file_last_line("Exemple/origin.txt"))
-    insert_line_into_file("Exemple/origin.txt", "# ligne rajoute", "# ligne 4\n")
+    insert_line_into_file("Exemple/origin.txt", "# ligne rajoute\n", "# ligne 4\n")
