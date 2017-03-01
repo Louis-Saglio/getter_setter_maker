@@ -10,9 +10,7 @@
     </ul>
 </p>
 
-<p>
-    Fonctionnement de la fonction create_object() :
-</p>
+### Fonctionnement de la fonction create_object() :
 <ul>
     <li>Utilité : Créer automatiquement une liste d'instance d'une classe précédement créé avec class_creator, en remplissant les attributs de ces instances ainsi créées avec les différentes valeurs de votre choix</li>
     <li>
@@ -28,7 +26,7 @@
     <li><li>Retour : Une liste d'instance de la class dont les attributs sont remplis ainsi qu'ils auront été modélisé dans le paramètre attribut</li>
 </ul>
 
-<p>Fonctionnement de la fonction : create_class_instance()</p>
+### Fonctionnement de la fonction : create_class_instance()
 <ul>
     <li>
         Utilité : Créer automatiquement une class avec ses méthodes de base (__init__, getter, setter) et une liste d'instance(s) de cette class suivant les paramètres choisis par l'utilisateur
@@ -45,9 +43,8 @@
             </li>
         </ul>
         <li>Retour : Une liste d'instance de la class dont les attributs sont remplis ainsi qu'ils auront été modélisé dans le paramètre attribut</li>
-    </li>
-</ul>
-<p>Fonctionnement de l'outil class_creator.py</p>
+    </ul></li>
+### Fonctionnement de l'outil class_creator.py
 <ul>
     <li>Utilité : Cet outil permet d'écrire automatiquement une classe compatible avec la fonction create_class_instance() avec sa fonction __init et ses accesseurs et mutateurs.</li>
     <li>Pour l'utiliser procédez comme il suit :
