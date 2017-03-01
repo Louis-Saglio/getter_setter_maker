@@ -1,6 +1,7 @@
 # getter_setter_maker
 ## Description :
 <p>Script Python automatisant la création d'une classe Python ainsi que des instances de cette classe</p>
+<p>Avertissement : Ce fichier README n'est pas à jour, il manque la doc à propos du fichier write_in_file.py et de la fonction add_attribute_to_class</p>
 ## Usage
 <p>
     <p>Pour l'utiliser, il faut :</p>
