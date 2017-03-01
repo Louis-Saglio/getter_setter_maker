@@ -61,10 +61,8 @@ def create_class_instance(nom_classe, attributs):
         attributs : {str: [], ...}
     """
 
-    # On récupère le nom des attributs sous de string où les attributs sont séparés par des ,
-    liste_attributs = ''
-    for key in attributs:
-        liste_attributs += (key + ',')
+    # On récupère le nom des attributs sous forme de string où les attributs sont séparés par des ,
+    liste_attributs = ','.join(attributs)
 
     # On vérifie si la classe existe déja. Sinon on la créé. En tout cas on l'importe
     try:
